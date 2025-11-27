@@ -1,2 +1,2 @@
 # meu-primeiro-projeto-git
-Aprendendo a usar Git e GitHub
+Este projeto foi clonado com sucesso e eu fiz uma alteração!
