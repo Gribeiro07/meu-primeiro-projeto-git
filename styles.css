@@ -2,26 +2,27 @@
 :root {
     --primary-color: #121212;
     --secondary-color: #ffffff;
-    --accent-color: #4a90e2; /* Modern Blue Accent */
+    --accent-color: #4a90e2;
+    /* Modern Blue Accent */
     --background-color: #ffffff;
     --surface-color: #f8f9fa;
     --text-color: #212529;
     --text-light: #6c757d;
     --border-color: #dee2e6;
-    
+
     --font-main: 'Outfit', sans-serif;
-    
+
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
     --spacing-lg: 2rem;
     --spacing-xl: 4rem;
-    
+
     --border-radius: 8px;
-    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
-    
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
     --transition: all 0.3s ease;
 }
 
@@ -62,15 +63,30 @@ button {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: var(--spacing-sm);
 }
 
-h1 { font-size: 3.5rem; letter-spacing: -0.02em; }
-h2 { font-size: 2.5rem; letter-spacing: -0.01em; }
-h3 { font-size: 1.75rem; }
+h1 {
+    font-size: 3.5rem;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 2.5rem;
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
 
 /* Layout Utilities */
 .container {
@@ -214,6 +230,7 @@ nav {
 .hero-content {
     max-width: 600px;
     z-index: 2;
+    position: relative;
 }
 
 .hero-tag {
@@ -227,12 +244,13 @@ nav {
 
 .hero-image {
     position: absolute;
-    right: 0;
+    left: 0;
     top: 0;
-    width: 50%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: 1;
+    opacity: 0.2;
 }
 
 /* Products Section */
@@ -353,23 +371,130 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
-    
+    h1 {
+        font-size: 2.5rem;
+    }
+
     .hero {
         flex-direction: column;
         height: auto;
         padding-top: 40px;
         text-align: center;
     }
-    
+
     .hero-image {
         position: relative;
         width: 100%;
         height: 400px;
         margin-top: var(--spacing-lg);
     }
-    
+
     .nav-links {
-        display: none; /* Mobile menu implementation needed later if requested */
+        display: none;
+        /* Mobile menu implementation needed later if requested */
     }
+}
+
+/* Login Page Styles */
+.login-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--surface-color);
+    padding-top: 80px;
+    /* Header height */
+    padding-bottom: var(--spacing-xl);
+}
+
+.login-container {
+    background: white;
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 450px;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.login-header h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.login-header p {
+    color: var(--text-light);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem;
+    /* Left padding for icon */
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.input-wrapper input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(18, 18, 18, 0.1);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: var(--spacing-lg);
+}
+
+.forgot-password {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.btn-block {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    font-size: 0.9rem;
+}
+
+.form-footer a {
+    color: var(--primary-color);
+    font-weight: 700;
 }
