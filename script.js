@@ -55,7 +55,15 @@ const products = [
         category: "Acessórios",
         price: 599.90,
         image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?q=80&w=1999&auto=format&fit=crop"
+    },
+    {
+        id: 9,
+        name: "teste",
+        category: "Acessórios",
+        price: 599.90,
+        image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?q=80&w=1999&auto=format&fit=crop"
     }
+
 ];
 
 // Cart State
@@ -92,19 +100,19 @@ function renderProducts() {
 }
 
 // Add to Cart
-window.addToCart = function(productId) {
+window.addToCart = function (productId) {
     const product = products.find(p => p.id === productId);
     if (product) {
         cart.push(product);
         updateCartCount();
-        
+
         // Visual feedback
         const btn = event.target;
         const originalText = btn.innerText;
         btn.innerText = "Adicionado!";
         btn.style.backgroundColor = "var(--primary-color)";
         btn.style.color = "white";
-        
+
         setTimeout(() => {
             btn.innerText = originalText;
             btn.style.backgroundColor = "";
@@ -116,7 +124,7 @@ window.addToCart = function(productId) {
 // Update Cart Count
 function updateCartCount() {
     cartCount.innerText = cart.length;
-    
+
     // Animate badge
     cartCount.style.transform = 'scale(1.2)';
     setTimeout(() => {
